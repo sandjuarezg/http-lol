@@ -1,4 +1,4 @@
-# http-api-lol
+# http-lol
 
 ## Run server
 Open terminal
