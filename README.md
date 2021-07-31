@@ -6,4 +6,4 @@ Open terminal
 go build && ./http-lol.exe
 ```
 ## Run client
-Go to http://localhost
+Go to http://localhost:8080
