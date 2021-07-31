@@ -1,0 +1,103 @@
+@use 'colors';
+
+.main {
+    padding: 2% 5%;
+
+    &__item {
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        color: colors.$color-main-text;
+        margin-bottom: 20px;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 10vw;  
+    }
+
+    &__search {
+        width: 50%;
+        margin: auto;
+    }
+
+    &__input{
+        font-size: 130%;
+        border-style: none;
+        height: 50px;
+        width: 100%;
+        padding: 10px;
+        border-radius: 15px;
+        outline: none;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.article {
+    padding: 15px;
+    background: colors.$color-article-background;
+    text-align: justify;
+    font-family: 'Times New Roman', Times, serif;
+    color: colors.$color-main-text;
+    margin-bottom: 20px;
+    border-bottom: 3px solid colors.$color-article-border;
+    position: relative;
+
+    &__column {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__columnItem {
+        padding-right: 40px;
+        width: calc(100% / 3 - 40px);
+    }
+
+    &__imgTitle {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__tag {
+        display: flex;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        border-top: 10px solid colors.$color-article-border;
+        border-right: 10px solid colors.$color-article-border;
+        border-bottom: 10px solid colors.$color-article-border;
+        border-left: 10px solid colors.$color-article-border;
+        bottom: -10px;
+        left: calc(50% - 10px);
+        transform: rotate(45deg);
+    }
+
+    &__item { 
+        padding-bottom: 10px;
+        font-size: 2vw; 
+
+
+        &--title {
+            padding-left: 30px;
+            font-size: 3vw; 
+            text-align: center;
+        }
+
+        &--tag {
+            padding: 0 10px;
+
+            &:hover {
+                background-color: colors.$color-article-border;
+            }
+        }
+
+        &--hability {
+            padding-left: 30px;
+        }
+    }
+}

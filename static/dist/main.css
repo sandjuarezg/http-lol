@@ -1,0 +1,120 @@
+.header {
+  background-color: #010208;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+.header__img {
+  text-align: center;
+  margin: auto;
+  width: 90%;
+}
+.header__title {
+  margin: 0;
+  color: #f9ffff;
+  font-size: 10vw;
+  font-weight: bold;
+  font-style: italic;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.main {
+  padding: 2% 5%;
+}
+.main__item {
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  color: #f9ffff;
+  margin-bottom: 20px;
+}
+.main__title {
+  margin: 0;
+  font-size: 10vw;
+}
+.main__search {
+  width: 50%;
+  margin: auto;
+}
+.main__input {
+  font-size: 130%;
+  border-style: none;
+  height: 50px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 15px;
+  outline: none;
+}
+.main__input:hover {
+  cursor: pointer;
+}
+
+.article {
+  padding: 15px;
+  background: #162929;
+  text-align: justify;
+  font-family: "Times New Roman", Times, serif;
+  color: #f9ffff;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #737442;
+  position: relative;
+}
+.article__column {
+  display: flex;
+  flex-wrap: wrap;
+}
+.article__columnItem {
+  padding-right: 40px;
+  width: calc(100% / 3 - 40px);
+}
+.article__imgTitle {
+  display: flex;
+  justify-content: center;
+}
+.article__tag {
+  display: flex;
+}
+.article::after {
+  content: "";
+  position: absolute;
+  border-top: 10px solid #737442;
+  border-right: 10px solid #737442;
+  border-bottom: 10px solid #737442;
+  border-left: 10px solid #737442;
+  bottom: -10px;
+  left: calc(50% - 10px);
+  transform: rotate(45deg);
+}
+.article__item {
+  padding-bottom: 10px;
+  font-size: 2vw;
+}
+.article__item--title {
+  padding-left: 30px;
+  font-size: 3vw;
+  text-align: center;
+}
+.article__item--tag {
+  padding: 0 10px;
+}
+.article__item--tag:hover {
+  background-color: #737442;
+}
+.article__item--hability {
+  padding-left: 30px;
+}
+
+body {
+  margin: 0px;
+  background-color: #204242;
+}
+
+/*# sourceMappingURL=main.css.map */

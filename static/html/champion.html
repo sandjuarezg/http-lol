@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champion</title>
+    <link href="../dist/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <header class="header">
+        <img class="header__img" src="img/splash/{{.Name}}_0.jpg"/>
+        <p class="header__title">{{.Name}}</p>
+    </header>
+    <main class="main">
+        <article class="article">
+            <div class="article__imgTitle">
+                <img src="img/{{.Image.Group}}/{{.Image.Full}}">
+                <p class="article__item article__item--title">{{.Title}}</p>
+            </div>
+            <p class="article__item">{{.Lore}}</p>
+            <p class="article__item">Type: {{.Partype}}</p>
+            <div class="article__tag">
+                <p class="article__item">Tags: </p>
+                {{range .Tags}}
+                    <p class="article__item article__item--tag">{{.}}</p>
+                {{end}}
+            </div>
+        </article>
+        <article class="article">
+            <p class="article__item article__item--title">Basic information</p>
+            <div class="article__column">
+                <div class="article__columnItem">
+                    <p class="article__item  article__item--tag">Attack: {{.Info.Attack}}</p>
+                </div>
+                <div class="article__columnItem">
+                    <p class="article__item  article__item--tag">Defense: {{.Info.Defense}}</p>
+                </div>
+                <div class="article__columnItem">
+                    <p class="article__item  article__item--tag">Magic: {{.Info.Magic}}</p>
+                </div>
+                <div class="article__columnItem">
+                    <p class="article__item  article__item--tag">Difficulty: {{.Info.Difficulty}}</p>
+                </div>
+                <div class="article__columnItem">
+                    <p class="article__item  article__item--tag">Stats</p>
+                </div>
+                <div class="article__columnItem">
+                    <p class="article__item  article__item--tag">Armor: {{.Stats.Armor}}</p>
+                </div>
+                <div class="article__columnItem">
+                    <p class="article__item  article__item--tag">Armor per level: {{.Stats.Armorperlevel}}</p>
+                </div>
+                <div class="article__columnItem">
+                    <p class="article__item  article__item--tag">Attack damage: {{.Stats.Attackdamage}}</p>
+                </div>
+                <div class="article__columnItem">
+                    <p class="article__item  article__item--tag">Attack damageperlevel: {{.Stats.Attackdamageperlevel}}</p>
+                </div>
+                <div class="article__columnItem">
+                    <p class="article__item  article__item--tag">Attack range: {{.Stats.Attackrange}}</p>
+                </div>
+                <div class="article__columnItem">
+                    <p class="article__item  article__item--tag">Attack speed: {{.Stats.Attackspeed}}</p>
+                </div>
+                <div class="article__columnItem">
+                    <p class="article__item  article__item--tag">Attack speed per level: {{.Stats.Attackspeedperlevel}}</p>
+                </div>
+                <div class="article__columnItem">
+                    <p class="article__item  article__item--tag">Crit: {{.Stats.Crit}}</p>
+                </div>
+                <div class="article__columnItem">
+                    <p class="article__item  article__item--tag">Crit per level: {{.Stats.Critperlevel}}</p>
+                </div>
+                <div class="article__columnItem">
+                    <p class="article__item  article__item--tag">Move speed: {{.Stats.Movespeed}}</p>
+                </div>             
+            </div>
+        </article>
+        <article class="article">
+            <p class="article__item article__item--title">Habilities</p>
+            <div class="article__column">
+                <div class="article__columnItem">
+                     <div class="article__imgTitle">
+                        <img src="img/{{.Passive.Image.Group}}/{{.Passive.Image.Full}}">
+                        <p class="article__item article__item--hability">{{.Passive.Name}}</p>
+                    </div>
+                    <p class="article__item"> Description: {{.Passive.Description}}</p>
+                </div>
+                {{range .Spells}}
+                    <div class="article__columnItem">
+                        <div class="article__imgTitle">
+                            <img src="img/{{.Image.Group}}/{{.Image.Full}}">
+                            <p class="article__item article__item--hability">{{.Name}}</p>
+                        </div>
+                        <p class="article__item">{{.Description}}</p>
+                    </div>
+                {{end}}
+            </div>
+        </article>
+        <article class="article">
+            <p class="article__item article__item--title">Tips</p>
+            <p class="article__item">Ally:</p>
+            {{range .Allytips}}
+                <p class="article__item">{{.}}</p>
+            {{end}}
+            <p class="article__item">Enemy:</p>
+            {{range .Enemytips}}
+                <p class="article__item">{{.}}</p>
+            {{end}}
+        </article>
+        <article class="article">
+            <p class="article__item article__item--title">Skins</p>
+            <div class="article__column">
+                {{range .Skins}}
+                    <div class="article__columnItem">
+                        <p class="article__item article__item--tag">{{.Name}}</p>
+                    </div>
+                {{end}}
+            </div> 
+        </article>
+    </main>
+</body>
+</html>
