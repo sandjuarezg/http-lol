@@ -8,7 +8,7 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/sandjuarezg/http-api-lol/struct_json"
+	"github.com/sandjuarezg/http-lol/struct_json"
 )
 
 func main() {

@@ -1,9 +1,9 @@
-# http-api-lol
+# http-lol
 
 ## Run server
 Open terminal
 ```scriptshell
-go build && ./http-rest-lol.exe
+go build && ./http-lol.exe
 ```
 ## Run client
 Go to http://localhost
