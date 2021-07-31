@@ -79,6 +79,10 @@ func champion(w http.ResponseWriter, r *http.Request) {
 	championData.Name = strings.ToUpper(championData.Name)
 	championData.Title = strings.Title(championData.Title)
 
-	t.Execute(w, championData)
+	err = t.Execute(w, championData)
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
 
 }
