@@ -30,11 +30,9 @@ func champion(w http.ResponseWriter, r *http.Request) {
 
 	//get data from form of index
 	r.ParseForm()
-	var champ string
-	champ = r.FormValue("champion")
+	var champ string = r.FormValue("champion")
 
 	champ = strings.ToLower(champ)
-
 	if strings.Contains(champ, "'") {
 		champ = strings.Replace(champ, "'", "", -1)
 		champ = strings.Title(champ)
