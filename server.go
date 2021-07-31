@@ -31,10 +31,7 @@ func champion(w http.ResponseWriter, r *http.Request) {
 	//get data from form of index
 	r.ParseForm()
 	var champ string
-
-	for i := 0; i < len(r.Form["champion"]); i++ {
-		champ = r.Form["champion"][i]
-	}
+	champ = r.FormValue("champion")
 
 	champ = strings.ToLower(champ)
 
