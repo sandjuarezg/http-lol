@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Champion</title>
-    <link href="../dist/main.css" rel="stylesheet" type="text/css">
+    <link href="./dist/main.css" rel="stylesheet" type="text/css">
 </head>
-
 <body>
     <header class="header">
-        <img class="header__img" src="img/splash/{{.Name}}_0.jpg"/>
+        <img class="header__img" src="./img/splash/{{.Name}}_0.jpg"/>
         <p class="header__title">{{.Name}}</p>
     </header>
     <main class="main">
         <article class="article">
             <div class="article__imgTitle">
-                <img src="img/{{.Image.Group}}/{{.Image.Full}}">
+                <img src="./img/{{.Image.Group}}/{{.Image.Full}}">
                 <p class="article__item article__item--title">{{.Title}}</p>
             </div>
             <p class="article__item">{{.Lore}}</p>
@@ -84,7 +82,7 @@
             <div class="article__column">
                 <div class="article__columnItem">
                      <div class="article__imgTitle">
-                        <img src="img/{{.Passive.Image.Group}}/{{.Passive.Image.Full}}">
+                        <img src="./img/{{.Passive.Image.Group}}/{{.Passive.Image.Full}}">
                         <p class="article__item article__item--hability">{{.Passive.Name}}</p>
                     </div>
                     <p class="article__item"> Description: {{.Passive.Description}}</p>
@@ -92,7 +90,7 @@
                 {{range .Spells}}
                     <div class="article__columnItem">
                         <div class="article__imgTitle">
-                            <img src="img/{{.Image.Group}}/{{.Image.Full}}">
+                            <img src="./img/{{.Image.Group}}/{{.Image.Full}}">
                             <p class="article__item article__item--hability">{{.Name}}</p>
                         </div>
                         <p class="article__item">{{.Description}}</p>

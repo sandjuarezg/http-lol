@@ -2,35 +2,40 @@ package struct_json
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 )
 
-func GetChampion(body []byte, nameChampion string) (champion Champion, err error) {
+func GetChampion(body []byte, nameChampion string) (Champion, error) {
 	var aux interface{}
+	var champion Champion
 
-	err = json.Unmarshal(body, &aux)
+	var err error = json.Unmarshal(body, &aux)
 	if err != nil {
 		fmt.Println(err)
-		return
+		return champion, err
 	}
 
 	var champ map[string]interface{} = aux.(map[string]interface{})
+	s, ok := champ["data"].(map[string]interface{})
 
-	var a = champ["data"].(map[string]interface{})
+	if ok {
+		jsonbody, err := json.Marshal(s[nameChampion])
+		if err != nil {
+			fmt.Println(err)
+			return champion, err
+		}
 
-	jsonbody, err := json.Marshal(a[nameChampion])
-	if err != nil {
-		fmt.Println(err)
-		return
+		err = json.Unmarshal(jsonbody, &champion)
+		if err != nil {
+			fmt.Println(err)
+			return champion, err
+		}
+	} else {
+		err = errors.New("interface not match")
 	}
 
-	err = json.Unmarshal(jsonbody, &champion)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-
-	return
+	return champion, err
 }
 
 type Champion struct {

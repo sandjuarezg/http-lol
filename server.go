@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
+	"html/template"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"strings"
-	"text/template"
 
 	"github.com/sandjuarezg/http-lol/struct_json"
 )
@@ -25,11 +25,15 @@ func champion(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusMethodNotAllowed)
 		return
 	}
-
 	defer fmt.Printf("Response from %s\n", r.URL.RequestURI())
 
 	//get data from form of index
-	r.ParseForm()
+	var err error = r.ParseForm()
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+
 	var champ string = r.FormValue("champion")
 
 	champ = strings.ToLower(champ)
