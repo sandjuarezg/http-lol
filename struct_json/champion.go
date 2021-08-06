@@ -6,36 +6,36 @@ import (
 	"fmt"
 )
 
-func GetChampion(body []byte, nameChampion string) (Champion, error) {
+func GetChampion(body []byte, nameChampion string) (champion Champion, err error) {
 	var aux interface{}
-	var champion Champion
+	var jsonbody []byte
 
-	var err error = json.Unmarshal(body, &aux)
+	err = json.Unmarshal(body, &aux)
 	if err != nil {
 		fmt.Println(err)
-		return champion, err
+		return
 	}
 
 	var champ map[string]interface{} = aux.(map[string]interface{})
 	s, ok := champ["data"].(map[string]interface{})
 
 	if ok {
-		jsonbody, err := json.Marshal(s[nameChampion])
+		jsonbody, err = json.Marshal(s[nameChampion])
 		if err != nil {
 			fmt.Println(err)
-			return champion, err
+			return
 		}
 
 		err = json.Unmarshal(jsonbody, &champion)
 		if err != nil {
 			fmt.Println(err)
-			return champion, err
+			return
 		}
 	} else {
 		err = errors.New("interface not match")
 	}
 
-	return champion, err
+	return
 }
 
 type Champion struct {
